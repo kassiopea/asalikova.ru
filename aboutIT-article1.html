@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5QPB2DJ');</script>
+        <!-- End Google Tag Manager -->
+		<meta charset="utf-8">
+			<title>Шпаргалка. Команды Linux</title>
+			<link rel="stylesheet" type="text/css" href="css/reset.css">
+			<link rel="stylesheet" type="text/css" href="css/style-main.css">
+            <link rel="stylesheet" href="css/YouTubePopUp.css">
+			<link rel="shortcut icon" href="images/minlogo.png" type="image/png">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <meta name="keywords" content="IT, статья, шпаргалка Linux, командная строка, терминал">
+            <meta name="description" content="Основные команды для терминала Linux">
+	</head>
+	<body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QPB2DJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+		<div class="wrapper">
+    		<div class="header">
+    			<div class="logo"><a href="index.html"><img src="images/logo-main.png" alt="logo"></a></div>
+
+    			<nav>
+    			    <a class="menu-trigger">меню</a>
+    				<ul>
+                        <li><a href="photo-portfolio.html">фото портфолио</a></li>
+                        <li><a href="adobe.html">тонкости Adobe</a></li>
+                        <li><a href="office-works.html">работа с Office</a></li>
+                        <li><a href="my-blog.html">Мой блог</a></li>
+                        <li><a href="aboutIT.html" class="active">около IT</a></li>
+                        <li><a href="qa.html">тестирование ПО</a></li>
+                    </ul>
+    			</nav>
+    		</div>
+		
+    		<div class="content">
+                <div class="wrap-office-article">
+                    
+                    <article class="office-articles">
+                        <h2>Шпаргалка. Команды Linux</h2>
+                        
+                        <div class="full-text-article-office aboutIT-article">
+                        
+                        <p> Здесь я выписала основные команды для терминала Linux. Один из способов открыть терминал: комбинация клавиш <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>T</kbd>. В настоящую консоль (без графической оболочки) можно войти через <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F1</kbd> (последняя клавиша определяет номер терминала, можно использовать от одного до шести, то есть от <kbd>F1</kbd> до <kbd>F6</kbd>. А выйти из нее командой клавиш <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F7</kbd>. Эта шпаргалка будет пополняться новыми командами в процессе освоения мною терминала и консоли.</p>
+                        <p>Копировать - <kbd>Ctrl</kbd> + <kbd>Insert</kbd></p>
+                        <p>Вставить - <kbd>Shift</kbd> + <kbd>Insert</kbd></p>
+                        <p>Помощь в автозаполнении - <kbd>tab</kbd></p>
+                        <p>Последняя набранная команда - стрелка вверх на клавиатуре</p>
+                        <p><b>history</b> - история команд, набранный в терминале</p>
+                        
+                        <p><b>ls</b> - содержимое каталога</p>
+                        <p><b>xdg-open имя файла</b> - открывает файл в программе. Я обычно открываю таким образом сохраненный плейлист в VLC.</p>
+                        <p><b>df</b> Показывает занятое пространство на диске (по умолчанию в байтах)</p>
+                        <p><b>df -h</b> Показывает занятое пространство на диске в гигабайтах</p>
+                        <p><b>apt-get update</b> получить обновление списков пакетов (этап перед установкой пакетов)</p>
+                        <p><b>apt-get install package_name</b> установить или обновить пакет, где package_name имя пакета</p>
+                        <pre class="code">pkill [название приложения]</pre>
+                        <p>(или process kill) завершает запущенный процесс. Часто используется в случаях, когда приложение не отвечает</p>
+                        <p><b>top</b> Команда выводит самые ресурсоемкие процессы в системе</p>
+                        <p><b>cd</b> - домашний каталог</p>
+                        <p><b>cd "путь"</b> - переходит в директорию "путь". Принимает как относительный, так и абсолютный.</p>
+                        <p>Относительный путь:</p>
+                        <pre class="code">cd music</pre>
+                        <p>Абсолютный путь:</p>
+                        <pre class="code">cd "/serials/2017/Анатомия Грей"</pre>
+                        <p>В случае, когда есть плохие символы в названии директории, путь нужно взять в кавычки (cd "Мои документы"). Или обратный слеш перед пробелами.</p>
+                        <p><b>cd -</b> (cd c тире) означает переход в предыдущую дерикторию</p>
+                        <p><b>pwd</b> Путь к текущему каталогу</p>
+                        <p><b>mkdir -p [путь до директории]</b> создать директорию в указанном месте</p>
+                        <p><b>shutdown</b> выключение компьютера. Используется с параметрами</p>
+                        <pre class="code">$ sudo shutdown [опции] [время] [сообщение]</pre>
+                        <p>Где <b>опции</b>:</p>
+                        <pre class="code">$ sudo shutdown -h now</pre>
+                        <p>Выключить компьютер сейчас</p>
+                        <pre class="code">$ sudo shutdown -h +5</pre>
+                        <p>Где +5 выключение через определенное количество минут, в данном случае, выключкение через 5 минут.</p>
+                        <pre class="code">$ sudo shutdown -c</pre>
+                        <p>Отмена предыдущей команды выключения</p>
+                        <pre class="code">$ sudo shutdown -h 00:00</pre>
+                        <p>Выключение компьютера к определенному времени, где 00:00 - часы и минуты, заданные пользователем</p>
+                        <p><b>А poweroff</b> команда используется для выключения компьютера, но при этом не выполняются подготовительные действия перед выключением. Просто отключается питание</p>
+                        <pre class="code">$ sudo poweroff</pre>
+                        <p><b>touch [index.html]</b> создать новый файл. В квадратных скобках указан пример названия файла</p>
+                        </div>
+                    </article>
+                    
+                </div>
+    		</div>
+
+
+    		<div class="footer">
+        		<div class="social-links scrollflow -opacity">
+    				<a href="https://www.facebook.com/anastasia.ekimova.3" target="_blank" class="fb"></a>
+    	             <a href="https://vk.com/id812724" target="_blank" class="vk"></a>
+    	             <a href="https://www.instagram.com/aasalikova/" target="_blank" class="insta"></a>
+    	             <a href="https://twitter.com/AASalikova" target="_blank" class="tv"></a>
+    			</div>
+    			<div class="copyright scrollflow -opacity"><p>&#169; Anastasia Salikova 2017</p></div>
+    		</div>
+	    </div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/YouTubePopUp.jquery.js"></script>
+	<script src="js/general.js"></script>
+	<script src="js/eskju.jquery.scrollflow.js"></script>
+
+
+	</body>
+</html>

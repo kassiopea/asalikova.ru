@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5QPB2DJ');</script>
+        <!-- End Google Tag Manager -->
+		<meta charset="utf-8">
+			<title>Формулы в условном форматировании</title>
+			<link rel="stylesheet" type="text/css" href="css/reset.css">
+			<link rel="stylesheet" type="text/css" href="css/style-main.css">
+            <link rel="stylesheet" href="css/YouTubePopUp.css">
+			<link rel="shortcut icon" href="images/minlogo.png" type="image/png">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <meta name="keywords" content="эксель, формулы, условное форматирование, статьи, excel, office">
+            <meta name="description" content="Условное форматирование с использованием формул">
+	</head>
+	<body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QPB2DJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+		<div class="wrapper">
+    		<div class="header">
+    			<div class="logo"><a href="index.html"><img src="images/logo-main.png" alt="logo"></a></div>
+
+    			<nav>
+    			    <a class="menu-trigger">меню</a>
+    				<ul>
+                        <li><a href="photo-portfolio.html">фото портфолио</a></li>
+                        <li><a href="adobe.html">тонкости Adobe</a></li>
+                        <li><a href="office-works.html" class="active">работа с Office</a></li>
+                        <li><a href="my-blog.html">Мой блог</a></li>
+                        <li><a href="aboutIT.html">около IT</a></li>
+                        <li><a href="qa.html">тестирование ПО</a></li>
+                    </ul>
+    			</nav>
+    		</div>
+		
+    		<div class="content">
+                <div class="wrap-office-article">
+                    
+                    <article class="office-articles">
+                        <h2>Формулы в условном форматировании</h2>
+                        
+                        <div class="full-text-article-office">
+                        
+                        <p>Условие: есть таблица с данными. Необходимо залить цветом строку, если заказ был сделан.</p>
+                        <p>В последнем столбце демонстрационной таблицы отмечено ("да"/"нет") сделан ли заказ. На основе этих данных мне необходимо выделить все строки с заказами. Конечно, можно поставить фильтр, выбрать "да" и вручную выделить цветом строки. Этот способ подходит, если Вам никогда больше не придется редактировать данные в таблице. То есть, в столбце "заказ" условие меняться не будет.
+
+                        А что, если в столбце "заказ" прописана формула, которая проставляет выполнение заказа исходя из его суммы. Вы отредактировали данные, добавили и удалили некоторое количество товара, сумма изменилась, товар уже не попадает в условия заказа. И соответственно, ранее выделенная вручную строка уже не актуальна. На помощь приходит условное форматирование с использованием формул.</p>
+                        <p>Перед форматированием заранее выделим диапозон рабочей таблицы (без шапки). После зайдем в управление правилами. "Главна" -> "Условное форматирование" -> "Управление правилами".</p>
+                        <img src="images/articles/condit-format1.jpg" alt="excel screen lesson">
+                        <p>Cоздаем новое правило</p>
+
+                        <img src="images/articles/condit-format2.jpg" alt="excel screen lesson">
+                        <p>В окне "тип правила"" выбираем "Использовать формулу для определения форматируемых ячеек". Вводим формулу в строку ниже. И задаем "формат". В данном случае я выбрала желтую заливку ячейки.</p>
+
+                        <img src="images/articles/condit-format3.jpg" alt="excel screen lesson">
+
+                        <p>В моем примере нужна конструкция формулы "ЕСЛИ". Ее вид:</p><br>
+                        <p><span class="formula">=ЕСЛИ(условие;значение, если условие выполняется;значение, если условие не выполняется)</span></p><br>
+                        <p><span>=ЕСЛИ($E2="да";ИСТИНА;ЛОЖЬ)</span></p>
+                        <p>Знак "$" перед "Е" стоит для того, чтобы зафиксировать столбик. В случае, если мы будем протягивать формулу по горизонтали, столбец Е останется, а не перезапишется на F, G и так по списку. В моем примере условие форматирования находится только в одном столбце, который я и зафиксировала.</p>
+
+                        <img src="images/articles/condit-format4.jpg" alt="excel screen lesson">
+
+                        <p>Если Вам тяжело писать формулу без подсказок, можете для начала прописать ее в excel (как сделано на скриншоте выше), проверить, что она работает. Скопировать и вставить в строку формул в условном форматировании.</p>
+
+                        <p>После того, как нажали "ОК", условное форматирование должно сработать, окрасив строки таблицы в выбранный ранее цвет. Если Вам необходимо поменять диапозон таблицы (добавились строки, столбцы), можно воспользоваться одним из вариантов: зайти в "управление правилами" и в разделе "применяется к" выделить любой диапозон таблицы, к которой будет применяться это правило.</p>
+                        
+                        <img src="images/articles/condit-format5.jpg" alt="excel screen lesson">
+
+                        <p>Вариантов использования такого вида форматирования множество. Когда-то на работе я вела табличку по сотрудникам с их днями рождениями. И за месяц до дня рождения "сотрудник" становился желтым, а за два дня зеленым :) И с помощью макроса при открытии показывал фильтр только тех сотрудников, у кого в текущем месяце день рождения. Также при расчете акции мне необходимо было видеть наглядно, какие клиенты попадают под условия. Как дополнительный инструмент, может пригодиться в любую минуту.</p>
+
+                        <p>Посмотреть видео с вариантом использования:</p>
+                        <p><a class="demo" href="https://www.youtube.com/watch?v=KA2v3jZC83g"><img src="images/articles/office-article2-video.jpg" alt="excel screen lesson"></a></p>
+
+
+
+
+                        <p class="ps-text">Опубликовано: <time datetime="2017-02-07T23:05">07.02.2017</time></p>
+                        </div>
+                    </article>
+                    
+                </div>
+    		</div>
+
+
+    		<div class="footer">
+        		<div class="social-links scrollflow -opacity">
+    				<a href="https://www.facebook.com/anastasia.ekimova.3" target="_blank" class="fb"></a>
+    	             <a href="https://vk.com/id812724" target="_blank" class="vk"></a>
+    	             <a href="https://www.instagram.com/aasalikova/" target="_blank" class="insta"></a>
+    	             <a href="https://twitter.com/AASalikova" target="_blank" class="tv"></a>
+    			</div>
+    			<div class="copyright scrollflow -opacity"><p>&#169; Anastasia Salikova 2017</p></div>
+    		</div>
+	    </div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/YouTubePopUp.jquery.js"></script>
+	<script src="js/general.js"></script>
+	<script src="js/eskju.jquery.scrollflow.js"></script>
+
+
+	</body>
+</html>

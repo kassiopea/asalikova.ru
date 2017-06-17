@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5QPB2DJ');</script>
+        <!-- End Google Tag Manager -->
+		<meta charset="utf-8">
+			<title>Есть ли жирный шрифт в ячейке</title>
+			<link rel="stylesheet" type="text/css" href="css/reset.css">
+			<link rel="stylesheet" type="text/css" href="css/style-main.css">
+            <link rel="stylesheet" href="css/YouTubePopUp.css">
+			<link rel="shortcut icon" href="images/minlogo.png" type="image/png">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <meta name="keywords" content="статья, жинрый шрифт, эксель, excel, формулы, функции, пользовательские, VBA, макросы">
+            <meta name="description" content="Найти все ячейки с жирным шрифтом так, чтобы можно было отфильтровать, выделить все ячейки такого рода цветом, при этом сделать все максимально быстро">
+	</head>
+	<body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QPB2DJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+		<div class="wrapper">
+    		<div class="header">
+    			<div class="logo"><a href="index.html"><img src="images/logo-main.png" alt="logo"></a></div>
+
+    			<nav>
+    			    <a class="menu-trigger">меню</a>
+    				<ul>
+                        <li><a href="photo-portfolio.html">фото портфолио</a></li>
+                        <li><a href="adobe.html">тонкости Adobe</a></li>
+                        <li><a href="office-works.html" class="active">работа с Office</a></li>
+                        <li><a href="my-blog.html">Мой блог</a></li>
+                        <li><a href="aboutIT.html">около IT</a></li>
+                        <li><a href="qa.html">тестирование ПО</a></li>
+                    </ul>
+    			</nav>
+    		</div>
+		
+    		<div class="content">
+                <div class="wrap-office-article">
+                    
+                    <article class="office-articles">
+                        <h2>Есть ли жирный шрифт в ячейке</h2>
+                        
+                        <div class="full-text-article-office">
+                        
+                        <p>Простая задача: есть таблица в excel, в нескольких ячейках которой текст выделен жирным. Нам нужно найти все ячейки с жирным шрифтом так, чтобы можно было отфильтровать, выделить все ячейки такого рода цветом, при этом сделать все максимально быстро. На помощь приходит пользовательская функция, созданная средствами VBA.</p>
+                        <p>Чтобы создать такую функцию, необходимо прописать ее код в модуль VBA. Для этого во вкладке "Разработчик" заходим в 'Visual Basic'</p>
+                        <img src="images/articles/bold1.jpg" alt="excel screen lesson">
+                        <p>В рабочей области VBA заходим в меню 'Insert' → 'Modules'.</p>
+                        <img src="images/articles/bold2.jpg" alt="excel screen lesson">
+                        <p>Справа в новом окне вставляем код для нашей будущей формулы.</p>
+                        <pre class="excel-code">
+                        <code>
+    Option Explicit
+    Public Function Bld(r As Range) As Boolean 
+    Bld = r.Font.Bold 
+    End Function
+                        </code>
+                        </pre>
+                        
+                        <p class="ps-text">*Код выше означает следующее: создается публичная функция (название "Bld" можете заменить на свое). Принимает значение ИСТИНА или ЛОЖЬ. И функция ищет жирный шрифт.</p>
+                        <img src="images/articles/bold3.jpg" alt="excel screen lesson">
+
+                        <p>После того, как вставили код, можно выходить из разработчика. Время проверить работоспособность нашей функции. Открываем/создаем таблицу с любыми данными. В пустую ячейку в конце таблицы вводим функцию =Bld(номер ячейки). Если Вы меняли название функции, соответственно, вводите название вашей функции.</p>
+
+                        <img src="images/articles/bold4.jpg" alt="excel screen lesson">
+                        <p>Если в искомой ячейке шрифт обычный, то функция вернет ЛОЖЬ.</p>
+                        <img src="images/articles/bold5.jpg" alt="excel screen lesson">
+                        <p>Если шрифт жирный - ИСТИНА.</p>
+                        <img src="images/articles/bold6.jpg" alt="excel screen lesson">
+                        <h4>Важно!</h4>
+                        <p>Формула не делает перерасчет автоматически. То есть, если Вы в готовом шаблоне поменяете в ячейке обычный шрифт на жирный, в ячейке с формулой "ложь" не изменится на "истину". Есть быстрый способ перерасчета таких функций: комбинация клавиш <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F9</kbd>. Всегда советую привыкать к комбинациям клавиш, горячим клавишам. Это очень продуктивно сказывается на скорости работы.</p>
+
+                        Посмотреть процесс на видео:
+                        <p><a class="demo" href="https://www.youtube.com/watch?v=h4OJuUdt5VI"><img src="images/articles/office-article1-video.jpg" alt="excel screen lesson"></a></p>
+
+
+
+
+                        <p class="ps-text">Опубликовано: <time datetime="2017-02-07T23:05">07.02.2017</time></p>
+                        </div>
+                    </article>
+                    
+                </div>
+    		</div>
+
+
+    		<div class="footer">
+        		<div class="social-links scrollflow -opacity">
+    				<a href="https://www.facebook.com/anastasia.ekimova.3" target="_blank" class="fb"></a>
+    	             <a href="https://vk.com/id812724" target="_blank" class="vk"></a>
+    	             <a href="https://www.instagram.com/aasalikova/" target="_blank" class="insta"></a>
+    	             <a href="https://twitter.com/AASalikova" target="_blank" class="tv"></a>
+    			</div>
+    			<div class="copyright scrollflow -opacity"><p>&#169; Anastasia Salikova 2017</p></div>
+    		</div>
+	    </div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/YouTubePopUp.jquery.js"></script>
+	<script src="js/general.js"></script>
+	<script src="js/eskju.jquery.scrollflow.js"></script>
+
+
+	</body>
+</html>

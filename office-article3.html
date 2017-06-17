@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5QPB2DJ');</script>
+        <!-- End Google Tag Manager -->
+		<meta charset="utf-8">
+			<title>Разнести данные из одного столбца в другие легко</title>
+			<link rel="stylesheet" type="text/css" href="css/reset.css">
+			<link rel="stylesheet" type="text/css" href="css/style-main.css">
+            <link rel="stylesheet" href="css/YouTubePopUp.css">
+			<link rel="shortcut icon" href="images/minlogo.png" type="image/png">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <meta name="keywords" content="эксель, формулы, условное форматирование, статьи, excel, office, VBA, макросы">
+            <meta name="description" content="Один из способов перенести данные, которые находятся в одном столбце друг под другом, в несколько других столбцов.">
+	</head>
+	<body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QPB2DJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+		<div class="wrapper">
+    		<div class="header">
+    			<div class="logo"><a href="index.html"><img src="images/logo-main.png" alt="logo"></a></div>
+
+    			<nav>
+    			    <a class="menu-trigger">меню</a>
+    				<ul>
+                        <li><a href="photo-portfolio.html">фото портфолио</a></li>
+                        <li><a href="adobe.html">тонкости Adobe</a></li>
+                        <li><a href="office-works.html" class="active">работа с Office</a></li>
+                        <li><a href="my-blog.html">Мой блог</a></li>
+                        <li><a href="aboutIT.html">около IT</a></li>
+                        <li><a href="qa.html">тестирование ПО</a></li>
+                    </ul>
+    			</nav>
+    		</div>
+		
+    		<div class="content">
+                <div class="wrap-office-article">
+                    
+                    <article class="office-articles">
+                        <h2>Разнести данные из одного столбца в другие легко</h2>
+                        
+                        <div class="full-text-article-office">
+                        
+                        <p>Кто работал с таблицами, в которых большниство данных находятся в одном столбце друг под другом, с разными группировками и объедененными ячейками, тот меня поймет. Совершенно невозможно нормально что-то отфильтровать, сводную таблицу не построить, да и анализировать такие файлы тяжело. Одним из способов разнести данные из одного столбца в несколько других могу поделиться. Для таких случаев у меня под рукой всегда был шаблон файла - "болванка" с пользовательской функцией, форматированием и проч. Нужно только немного манипуляций в двух файлах и не более пятнадцати минут свободного времени. Если нам из исходного столбца нужно перенести данные только один, то дополнительных манипуляций с таблицой не требуется. Но если в исходном столбце данные на 2 и более столбцов, то понадобиться шаблон. Но сначала преобразуем исходную таблицу:
+                        </p>
+                        
+                        <img src="images/articles/columns1.jpg" alt="office excel screen lessons">
+                        <p>Задача перенести даты в соседний столбик. Сначала создадим перед таблицой пустой столбец с таким же форматированием. Для этого выделим столбец В, возьмем его "формат" (с помощью инструмента "метелка"-"формат по образцу" во вкладке "Главная") и продублируем в столбец А (просто кликнув по нему). Удаляем пустые строки между шапкой и данными, если они есть. Ставим фильтр.</p>
+
+                        <img src="images/articles/columns2.jpg" alt="office excel screen lessons">
+                        <p>Затем, в первую ячейку пустого столбца скопируем дату. Для этого используем формулу вида:<br> 
+                        =(ячейка с исходными данными)<br>
+                        =(B10) //в данном случае</p>
+                        <p>Протягиваем формулу до конца таблицы. После этого внизу в "параметрах автозаполнения" выбираем "заполнить только значения"(эта удобная фича присутствует в последних версиях excel, в старых версиях необходимо будет еще раз повторить действия с "метелкой").</p>
+
+                        <img src="images/articles/columns3.jpg" alt="office excel screen lessons">
+
+                        <p>Если Вы не поставили сразу фильтр в шапку таблицы, сейчас самое время (через вкладку "данные" → "фильтр", или "главная" → "сортировка и фильтр" → "фильтр", либо комбинация клавиш <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>L</kbd>. В файле из 1С обычно между группами данных есть почти невидимая пустая строка. Когда мы протягивали формулу, в таких строках в столбец А прописалось значение ноль. И воспользовавшись фильтром мы выберем все эти строки и удалим их.</p>
+
+                        <img src="images/articles/columns4.jpg" alt="office excel screen lessons">
+
+                        <p><img src="images/articles/columns5.jpg" alt="office excel screen lessons"></p>
+                        <p>Теперь переходим к удаленю ненужных данных в столбце А. Все даты в нашем файле имеют бежевую заливку, а остальные - белую. В параметрах фильтра выбираем "Фильтр по цвету" → "белая заливка" (как показано на рисунке ниже).</p>
+
+                        <p><img src="images/articles/columns6.jpg" alt="office excel screen lessons"></p>
+
+                        <p>Затем, очищаем содержимое этих ячеек. Для этого выделяем их и нажимаем <kbd>delete</kbd>. Не снимая выделения, снимаем фильтр (открываем фильтр на столбце А и нажимаем "Удалить фильтр с..."). 
+                        <img src="images/articles/columns7.jpg" alt="office excel screen lessons">В итоге получаем такого вида файл:</p>
+
+                        <img src="images/articles/columns8.jpg" alt="office excel screen lessons">
+
+                        <p>Наша задача выделить только пустые ячейки, игнорируя ячейки с данными. Для этого нажимаем комбинацию клавиш <kbd>ctrl</kbd> + <kbd>G</kbd>. В новом окне "переход" нажимаем "выделить"</p>
+
+                        <img src="images/articles/columns9.jpg" alt="office excel screen lessons">
+                        <p>С помощью радио кнопок выбираем "пустые ячейки" и нажимаем ОК.</p>
+
+                        <img src="images/articles/columns10.jpg" alt="office excel screen lessons">
+
+                        <p>Эти манипуляции необходимы для того, чтобы продублировать даты только в пустые ячейки. Нажимаем на клавиатуре "=", формула автоматически прописывается в первую из выделенных пустых ячеек. Далее кликаем по ячейке выше с первой датой. И удерживая <kbd>ctrl</kbd> нажимаем <kbd>enter</kbd>. Выглядит это так:</p>
+
+                        <img src="images/articles/columns11.jpg" alt="office excel screen lessons">
+
+                        <p><img src="images/articles/columns12.jpg" alt="office excel screen lessons"></p>
+                        <p>Основые этапы позади. Осталось удалить строки с датами, которые прописаны во втором столбце. Но сначала нужно преобразовать формулы в первом столбце в значения. Иначе, при удалении строк с датами (выделенными цветом) нашей формуле больше не на что будет опираться и вместо дат появятся "#Н/Д". Выделяем первый столбец. Копируем, а затем вставляем как значения в тот же самый столбец А.</p>
+                        <img src="images/articles/columns13.jpg" alt="office excel screen lessons">
+                        <p>В фильтре выбираем "фильтр по цвету" → "бежевый цвет". Все отфильтрованные строки с датами мы спокойно можем удалить.</p>
+                        <img src="images/articles/columns14.jpg" alt="office excel screen lessons">
+                        <p><img src="images/articles/columns15.jpg" alt="office excel screen lessons"></p>
+                        <p>И после снятия фильтра у нас получилась вот такая красивая таблица.</p>
+                        <p><img src="images/articles/columns16.jpg" alt="office excel screen lessons"></p>
+                        <p>Таблица готова. А если нужно перенести в отдельный столбец еще и наименование? Принцип, который применяли выше, нам не поможет. В новой таблице нет окрашенных в разные цвета строк. А наименования выделены только жирным шрифтом. Чтобы принцип сработал, нужно выделить цветом (как в случае с датами) наши наименования. Для этого нам пригодится формула, определяющая жирный шрифт в ячейке и условное форматирование, которое зальет цветом выбранные строки. Как сделать пользовательскую функцию, можете почитать <a href="office-article1.html">здесь</a>. А про условное форматирование <a href="office-article2.html">здесь</a>.</p>
+                        <p>Если обрабатывать такого вида файлы приходится постоянно, то разумнее сначала создать файл "шаблон" с прописанной формулой и форматированием. В таком случае, мы преобразованную выше таблицу скопируем в файл-болванку (в нем уже создан дополнительно пустой столбец под наименования). И повторим манипуляции, начиная с удаления данных из ячеек, не залитых цветом. В итоге, у нас должна получиться красивая таблица, в которой даты и наименования перенесены в разные столбцы. С таким видом данных легко будет взаимодействовать: фильтровать, строить сводные таблицы.</p>
+                        <img src="images/articles/columns17.jpg" alt="office excel screen lessons">
+
+                        <p>Посмотреть видео с вариантом использования:</p>
+                        <p><a class="demo" href="https://www.youtube.com/watch?v=-m1y03TF_jE"><img src="images/articles/office-article3-video.jpg" alt="office excel screen lessons"></a></p>
+
+
+
+
+                        <p class="ps-text">Опубликовано: <time datetime="2017-02-07T23:05">07.02.2017</time></p>
+                        </div>
+                    </article>
+                    
+                </div>
+    		</div>
+
+
+    		<div class="footer">
+        		<div class="social-links scrollflow -opacity">
+    				<a href="https://www.facebook.com/anastasia.ekimova.3" target="_blank" class="fb"></a>
+    	             <a href="https://vk.com/id812724" target="_blank" class="vk"></a>
+    	             <a href="https://www.instagram.com/aasalikova/" target="_blank" class="insta"></a>
+    	             <a href="https://twitter.com/AASalikova" target="_blank" class="tv"></a>
+    			</div>
+    			<div class="copyright scrollflow -opacity"><p>&#169; Anastasia Salikova 2017</p></div>
+    		</div>
+	    </div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/YouTubePopUp.jquery.js"></script>
+	<script src="js/general.js"></script>
+	<script src="js/eskju.jquery.scrollflow.js"></script>
+
+
+	</body>
+</html>
